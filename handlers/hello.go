@@ -18,7 +18,7 @@ func NewHello(l *log.Logger) *Hello {
 }
 
 // ServerHTTP method implements http.Handler
-func (h *Hello) ServerHTTP(rw http.ResponseWriter, r *http.Request) {
+func (h *Hello) ServeHTTP(rw http.ResponseWriter, r *http.Request) {
 	h.l.Println("Handle Hello Requests")
 
 	b, err := ioutil.ReadAll(r.Body)
